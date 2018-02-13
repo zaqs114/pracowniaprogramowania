@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="projekt pracownie programowania:war">
-    <output-path>$PROJECT_DIR$/target</output-path>
-    <root id="archive" name="ProjektPracProg-1.0-SNAPSHOT.war">
-      <element id="artifact" artifact-name="projekt pracownie programowania:war exploded" />
-    </root>
-  </artifact>
-</component>
