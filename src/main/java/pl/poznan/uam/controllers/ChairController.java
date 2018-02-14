@@ -1,9 +1,10 @@
-package pl.poznan.uam;
+package pl.poznan.uam.controllers;
 
 import org.jooq.DSLContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import pl.poznan.uam.Chair;
 import pl.poznan.uam.tables.Chairs;
 import pl.poznan.uam.tables.records.ChairsRecord;
 
