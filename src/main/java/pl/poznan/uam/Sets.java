@@ -3,8 +3,8 @@ package pl.poznan.uam;
 import lombok.Data;
 
 public @Data class Sets {
-    private int id;
-    private int chair_id;
-    private int table_id;
-    private String name;
+    public int id;
+    public int chair_id;
+    public int table_id;
+    public String name;
 }

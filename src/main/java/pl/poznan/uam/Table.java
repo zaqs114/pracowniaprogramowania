@@ -3,10 +3,10 @@ package pl.poznan.uam;
 import lombok.Data;
 
 public @Data class Table {
-    private int id;
-    private int height;
-    private int width;
-    private int lenght;
-    private String shape;
-    private String name;
+    public int id;
+    public int height;
+    public int width;
+    public int lenght;
+    public String shape;
+    public String name;
 }
