@@ -1,9 +1,17 @@
-$(document).ready(function(){
-    $.get("http://localhost:8080/chair", function(data, status){
-        $('.chair-id').html("The ID is " + data.id);
-        $('.chair-height').html("The userName is " + data.userName);
-        $('.chair-width').html("The firstName is " + data.firstName);
-        $('.chair-color').html("The lastName is " + data.lastName);
-        $('.chair-name').html("The emailAddress is " + data.emailAddress);
+$(document).ready(function () {
+    $('.add').click(function () {
+        $.ajax({
+            contentType: 'application/json',
+            url: "http://localhost:8080/chair",
+            type: 'POST',
+            data: JSON.stringify({
+                "height": document.getElementById("1").value,
+                "width": document.getElementById("2").value,
+                "color": document.getElementById("3").value,
+                "name": document.getElementById("4").value,
+            }),
+            dataType: 'json'
+        }).then(function (data) {
+        });
     });
 });
