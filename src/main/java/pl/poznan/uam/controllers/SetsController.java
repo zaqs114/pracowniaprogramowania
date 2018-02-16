@@ -12,6 +12,7 @@ import java.util.List;
 import static pl.poznan.uam.tables.Sets.SETS;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:63342")
 public class SetsController {
     @Autowired
     private DSLContext jooq;

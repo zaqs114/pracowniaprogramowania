@@ -12,6 +12,7 @@ import java.util.List;
 import static pl.poznan.uam.Tables.TABLES;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:63342")
 public class TableController {
 
     @Autowired
