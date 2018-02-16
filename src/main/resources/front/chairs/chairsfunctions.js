@@ -10,8 +10,21 @@ $(document).ready(function () {
                 "color": document.getElementById("3").value,
                 "name": document.getElementById("4").value,
             }),
-            dataType: 'json'
+            dataType: 'json',
+            success: alert("Pomyślnie dodano krzesło")
         }).then(function (data) {
+        });
+    });
+
+    $('.del').click(function () {
+        $.ajax({
+            url: "http://localhost:8080/chair/" + document.getElementById("deletion").value,
+            type: 'DELETE',
+            success: function(){
+                if(!alert("Pomyślnie usunięto krzesło")){window.location.reload();}
+            }
+        }).then(function (data) {
+
         });
     });
 });

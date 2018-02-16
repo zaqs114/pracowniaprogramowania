@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="UTF-8">
+    <title>Usuwanie Krzeseł</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="chairsfunctions.js"></script>
+    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.js"></script>
+</head>
+<body>
+<table id="dataTable">
+    <thead>
+    <tr>
+        <th>Identyfikator</th>
+        <th>Wysokość</th>
+        <th>Szerokość</th>
+        <th>Kolor</th>
+        <th>Nazwa</th>
+    </tr>
+    </thead>
+    <script>
+        $(document).ready( function () {
+            $.get("http://localhost:8080/chair", function (data) {
+                console.log(data);
+                $('#dataTable').DataTable({
+                    data: data,
+                    columns: [
+                        {data: 'id'},
+                        {data: 'height'},
+                        {data: 'width'},
+                        {data: 'color'},
+                        {data: 'name'}
+                    ]
+                });
+            });
+        });
+    </script>
+</table>
+
+<div>
+    <br>
+    <labe>Podaj identygikator krzesła który chcesz usunąć: </labe><input type="text" name="id" id="deletion"><br>
+    <button class="del">Delete</button>
+
+</div>
+
+</body>
+
+</html>
