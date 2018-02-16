@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="../bellsandwhistles.css">
+<meta charset="UTF-8">
+<title>Usuwanie Zestawów</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="setsfunctions.js"></script>
+<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.css">
+<script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.js"></script>
+</head>
+<body>
+<table id="dataTable">
+    <thead>
+    <tr>
+        <th>Identyfikator</th>
+        <th>Identyfikator krzesła</th>
+        <th>Identyfikator stołu</th>
+        <th>Nazwa zestawu</th>
+    </tr>
+    </thead>
+    <script>
+        $(document).ready( function () {
+            $.get("http://localhost:8080/sets", function (data) {
+                console.log(data);
+                $('#dataTable').DataTable({
+                    data: data,
+                    columns: [
+                        {data: 'id'},
+                        {data: 'chair_id'},
+                        {data: 'table_id'},
+                        {data: 'name'},
+                    ]
+                });
+            });
+        });
+    </script>
+</table>
+
+<div class="center">
+    <br>
+    <labe>Podaj identyfikator zestawu który chcesz usunąć: </labe><input type="text" name="id" id="deletion"><br>
+    <button class="del">Usuń</button>
+
+</div>
+</body>
+</html>

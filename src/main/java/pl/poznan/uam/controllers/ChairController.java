@@ -12,7 +12,7 @@ import static pl.poznan.uam.Tables.CHAIRS;
 
 
 @RestController
-@CrossOrigin(origins = "http://localhost:63343")
+@CrossOrigin(origins = "http://localhost:63342")
 public class ChairController {
 
     @Autowired

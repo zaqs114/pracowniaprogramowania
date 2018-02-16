@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Lista Stołów</title>
+    <title>Lista zestawów</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.css">
     <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.js"></script>
@@ -12,25 +12,21 @@
     <thead>
     <tr>
         <th>Identyfikator</th>
-        <th>Wysokość</th>
-        <th>Szerokość</th>
-        <th>Długość</th>
-        <th>Kształt</th>
-        <th>Nazwa</th>
+        <th>Identyfikator krzesła</th>
+        <th>Identyfikator stołu</th>
+        <th>Nazwa zestawu</th>
     </tr>
     </thead>
     <script>
         $(document).ready( function () {
-            $.get("http://localhost:8080/table", function (data) {
+            $.get("http://localhost:8080/sets", function (data) {
                 $('#dataTable').DataTable({
                     data: data,
                     columns: [
                         {data: 'id'},
-                        {data: 'height'},
-                        {data: 'width'},
-                        {data: 'lenght'},
-                        {data: 'shape'},
-                        {data: 'name'}
+                        {data: 'chair_id'},
+                        {data: 'table_id'},
+                        {data: 'name'},
                     ]
                 });
             });
