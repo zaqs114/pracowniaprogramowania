@@ -6,10 +6,11 @@ import org.springframework.web.bind.annotation.*;
 import pl.poznan.uam.Sets;
 import pl.poznan.uam.tables.records.SetsRecord;
 
+
 import java.util.List;
 
 
-import static pl.poznan.uam.tables.Sets.SETS;
+import static pl.poznan.uam.Tables.SETS;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:63342")
@@ -31,7 +32,7 @@ public class SetsController {
         sr.store();
     }
 
-    @PostMapping("sets/{id}")
+    @DeleteMapping("/sets/{id}")
     public void delete(@PathVariable Integer id) {
         SetsRecord sr = jooq.fetchOne(SETS, SETS.ID.eq(id));
         sr.delete();

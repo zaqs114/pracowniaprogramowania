@@ -8,30 +8,30 @@
     <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.js"></script>
 </head>
 <body>
-<table id="dataTable">
-    <thead>
-    <tr>
-        <th>Identyfikator</th>
-        <th>Identyfikator krzesła</th>
-        <th>Identyfikator stołu</th>
-        <th>Nazwa zestawu</th>
-    </tr>
-    </thead>
-    <script>
-        $(document).ready( function () {
-            $.get("http://localhost:8080/sets", function (data) {
-                $('#dataTable').DataTable({
-                    data: data,
-                    columns: [
-                        {data: 'id'},
-                        {data: 'chair_id'},
-                        {data: 'table_id'},
-                        {data: 'name'},
-                    ]
+    <table id="dataTable">
+        <thead>
+        <tr>
+            <th>Identyfikator</th>
+            <th>Identyfikator krzesła</th>
+            <th>Identyfikator stołu</th>
+            <th>Nazwa zestawu</th>
+        </tr>
+        </thead>
+        <script>
+            $(document).ready(function () {
+                $.get("http://localhost:8080/sets", function (data) {
+                    $('#dataTable').DataTable({
+                        data: data,
+                        columns: [
+                            {data: 'id'},
+                            {data: 'chair_id'},
+                            {data: 'table_id'},
+                            {data: 'name'},
+                        ]
+                    });
                 });
             });
-        });
-    </script>
-</table>
+        </script>
+    </table>
 </body>
 </html>

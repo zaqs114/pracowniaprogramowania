@@ -5,14 +5,18 @@ $(document).ready(function () {
             url: "http://localhost:8080/table",
             type: 'POST',
             data: JSON.stringify({
-                "height": document.getElementById("1").value,
-                "width": document.getElementById("2").value,
-                "lenght": document.getElementById("3").value,
-                "shape": document.getElementById("4").value,
-                "name": document.getElementById("5").value,
+                "height": document.getElementById("hgt").value,
+                "width": document.getElementById("wid").value,
+                "lenght": document.getElementById("lgt").value,
+                "shape": document.getElementById("shp").value,
+                "name": document.getElementById("nme").value
             }),
-            dataType: 'json',
-            success: alert("Pomyślnie dodano stół")
+            success: function(){
+                alert("Stół został pomyślnie dodany");
+            },
+            error: function(){
+                alert("Coś poszło nie tak. Spróbuj ponownie");
+            }
         }).then(function (data) {
         });
     });
@@ -23,6 +27,9 @@ $(document).ready(function () {
             type: 'DELETE',
             success: function(){
                 if(!alert("Pomyślnie usunięto stół")){window.location.reload();}
+            },
+            error: function(){
+                alert("Coś poszło nie tak. Spróbuj ponownie");
             }
         }).then(function (data) {
 

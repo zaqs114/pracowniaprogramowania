@@ -163,6 +163,11 @@
                 </dependencies>
             </plugin>
         </plugins>
+        <testResources>
+            <testResource>
+                <directory>src/main/*</directory>
+            </testResource>
+        </testResources>
     </build>
     <repositories>
         <repository>
