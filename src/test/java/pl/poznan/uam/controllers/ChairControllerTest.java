@@ -34,7 +34,7 @@ public class ChairControllerTest {
 
     @Test
     public void deletechair() throws Exception {
-        mvc.perform(delete("/chair/{id}", "16")
+        mvc.perform(delete("/chair/{id}", "38")
                 .contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
                 .andExpect(status().isOk())
                 .andDo(print());
