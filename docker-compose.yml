@@ -1,0 +1,11 @@
+postgres:
+  image: postgres:9.4
+  ports:
+   - 5433:5432
+  environment:
+   - POSTGRES_USER=psqladmin
+   - POSTGRES_PASSWORD=projektppr
+   - POSTGRES_DB=psqldbase
+  volumes:
+   - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+
